@@ -44,12 +44,13 @@
     };
 
     var n = 0;
-    var transparency = 0.0;
+    var transparency = 0;
     setInterval(function(){
+      
         if(n % 450 == 0){
             ctx.save();
             ctx.setTransform(1,0,0,1,0,0);
-            ratio = 0.0;
+            transparency = 0.0;
             ctx.clearRect(0,0,canvas.width,canvas.height);
             ctx.restore();
         }
@@ -60,7 +61,7 @@
         ctx.lineTo(x2(n),y2(n));
         ctx.stroke();
         n++;
-        ratio += 0.0066;
+        transparency += 0.0066;
     }, 1000/25);
 
   </script>
